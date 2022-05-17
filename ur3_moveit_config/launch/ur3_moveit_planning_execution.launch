@@ -11,4 +11,9 @@
     <arg name="limited" default="$(arg limited)"/>
     <arg name="debug" default="$(arg debug)" />
   </include>
+  
+  <!-- Launch RViz-->
+  <arg name="gui" default="True" />
+  <param name="use_gui" value="$(arg gui)" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur3_moveit_config)/rviz/moveit_rviz.rviz" required="true" />
 </launch>
